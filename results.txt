@@ -1,0 +1,280 @@
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.01
+Erasure coding availability: 0.0
+Replication availability:    0.01969
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.05
+Erasure coding availability: 0.0
+Replication availability:    0.09735
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.1
+Erasure coding availability: 2e-05
+Replication availability:    0.19105
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.2
+Erasure coding availability: 0.00247
+Replication availability:    0.35637
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.4
+Erasure coding availability: 0.24346
+Replication availability:    0.63877
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.6
+Erasure coding availability: 0.8709
+Replication availability:    0.83951
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.8
+Erasure coding availability: 0.9995
+Replication availability:    0.96069
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.9
+Erasure coding availability: 1.0
+Replication availability:    0.99039
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.95
+Erasure coding availability: 1.0
+Replication availability:    0.99777
+
+Stored 100000 files
+2x replication
+20/10 erasure code
+Node reliability: 0.99
+Erasure coding availability: 1.0
+Replication availability:    0.99991
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.01
+Erasure coding availability: 0.0
+Replication availability:    0.03929
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.05
+Erasure coding availability: 1e-05
+Replication availability:    0.18595
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.1
+Erasure coding availability: 0.00489
+Replication availability:    0.34496
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.2
+Erasure coding availability: 0.26865
+Replication availability:    0.59144
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.4
+Erasure coding availability: 0.98427
+Replication availability:    0.86995
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.6
+Erasure coding availability: 1.0
+Replication availability:    0.97557
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.8
+Erasure coding availability: 1.0
+Replication availability:    0.99837
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.9
+Erasure coding availability: 1.0
+Replication availability:    0.99996
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.95
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+4x replication
+40/10 erasure code
+Node reliability: 0.99
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.01
+Erasure coding availability: 0.0
+Replication availability:    0.07655
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.05
+Erasure coding availability: 0.0065
+Replication availability:    0.33481
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.1
+Erasure coding availability: 0.27684
+Replication availability:    0.56723
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.2
+Erasure coding availability: 0.97157
+Replication availability:    0.83295
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.4
+Erasure coding availability: 1.0
+Replication availability:    0.98327
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.6
+Erasure coding availability: 1.0
+Replication availability:    0.9994
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.8
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.9
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.95
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+8x replication
+80/10 erasure code
+Node reliability: 0.99
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.01
+Erasure coding availability: 2e-05
+Replication availability:    0.15025
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.05
+Erasure coding availability: 0.28066
+Replication availability:    0.55904
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.1
+Erasure coding availability: 0.96375
+Replication availability:    0.81353
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.2
+Erasure coding availability: 1.0
+Replication availability:    0.97192
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.4
+Erasure coding availability: 1.0
+Replication availability:    0.99976
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.6
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.8
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.9
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.95
+Erasure coding availability: 1.0
+Replication availability:    1.0
+
+Stored 100000 files
+16x replication
+160/10 erasure code
+Node reliability: 0.99
+Erasure coding availability: 1.0
+Replication availability:    1.0
+

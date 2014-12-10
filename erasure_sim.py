@@ -1,85 +1,97 @@
-
+#!/usr/bin/env python2.7
 """
-CS109 Final Project
-Simulation of Erasure Code Performance in Low Reliability Networks 
+CS143 Final Project
+Simulation of Erasure Code Performance in Unreliable Mobile Networks
 
 Jeff Rogers
 Nicolai Astrup Wiik
 Andrew Campbell
 Dawit Gebregziabher
-
-Some stuff adapted from http://web.mit.edu/~emin/www.old/source_code/py_ecc/
-So far, I've taken the general form from this guy's implementation. Eventually we
-could try to rewrite using NumPy and SciPy instead of the matrix functions he wrote. 
 """
 
-import numpy as np
-import scipy
 import random
 import genericmatrix
 import math
 import ffield
+from storageNode import StorageNode
 
-#Message is size k. Encrypted block is size n.
-class RSCode: 
-	def __init__(self,n,k):
-		self.n = n
-        self.k = k
-        self.NewEncoderMatrix()
-        self.encoderMatrix.Transpose()
-        self.encoderMatrix.LowerGaussianElim()
-        self.encoderMatrix.UpperInverse()
-        self.encoderMatrix.Transpose()
+def main():
+    # First we setup the network. We'll use 7 nodes, but more can be added as desired
+    port = 2000
+    initialNode = StorageNode("127.0.0.1" + str(port))
 
-	#Create matrix for use in encoding
-	def NewEncoderMatrix(self):
-		self.encoderMatrix = genericmatrix.GenericMatrix(
-            (self.n,self.k),0,1,self.field.Add,self.field.Subtract,
-            self.field.Multiply,self.field.Divide)
-        self.encoderMatrix[0,0] = 1
-        for i in range(0,self.n):
-            term = 1
-            for j in range(0, self.k):
-                self.encoderMatrix[i,j] = term
-                term = self.field.Multiply(term,i)
+    for i in xrange(1,7):
+        pass
 
-	#Encode data of size k using encoder matrix
-	def Encode(self,data):
-		return self.encoderMatrix.LeftMulColumnVec(data)
-
-	#use k blocks to reconstruct data
-	def PrepareDecoder(self,unErasedLocations):
-        """
-        Function:       PrepareDecoder(erasedTerms)
-        Description:    The input unErasedLocations is a list of the first
-                        self.k elements of the codeword which were 
-                        NOT erased.  For example, if the 0th, 5th,
-                        and 7th symbols of a (16,5) code were erased,
-                        then PrepareDecoder([1,2,3,4,6]) would
-                        properly prepare for decoding.
-        """
-        if (len(unErasedLocations) != self.k):
-            raise ValueError, 'input must be exactly length k'
-        
-        limitedEncoder = genericmatrix.GenericMatrix(
-            (self.k,self.k),0,1,self.field.Add,self.field.Subtract,
-            self.field.Multiply,self.field.Divide)
-        for i in range(0,self.k):
-            limitedEncoder.SetRow(
-                i,self.encoderMatrix.GetRow(unErasedLocations[i]))
-        self.decoderMatrix = limitedEncoder.Inverse()
-
-	def Decode(self,unErasedTerms):
-		return self.decoderMatrix.LeftMulColumnVec(unErasedTerms)
+    ## Now we store a few files among nodes
 
 
 
 
-	#Distribute payload amoung n nodes
+    ## Now we recover the files from the nodes
 
 
-	#Link/node failure probability constants
 
 
-	#Monte Carlo Simulation of Reed-Soloman
+    # Rather than running the simulation on our chord network, (which adds the complexity
+    # of adding nodes to and taking nodes out of the network at random), we simulate the
+    # performance of an erasure code based network under unreliable, mobile conditions
+    # and a more typical, replication based system to compare performance. We measure
+    # performance for several levels on unreliability, as given by a parameter to the
+    # simulation function.
+    print "Now simulating erasure code based network and replication based network for comparison"
+    # Erase file if it already existed from a prior run
+    f = open('results.txt', 'w')
+    f.close()
+    for redundancy in [2, 4, 8, 16]:
+        for reliability in [0.01, 0.05, 0.1, 0.2, 0.4, 0.6, 0.8, 0.9, 0.95, 0.99]:
+            runSimulation(redundancy, reliability)
+    print "Simulation completed. Check 'results.txt' for results of comparison"
 
+## Function definitions
+
+# Takes a single floating point value between 0 and 1 that indicates the reliability
+# of an individual node. Runs
+def runSimulation(redundancy, reliability):
+    # Hard-coded values for 20/10 erasure code. We assume that the replication based
+    # system uses a 2x replication strategy. We make the simplifying assumption that
+    # files are always successfully stored with the proper number of nodes (i.e. that
+    # with a 20/10 erasure code the file is always stored with 20 distinct nodes)
+    n = 10 * redundancy
+    k = 10
+    rep = redundancy
+    numNodes = 100
+    numFiles = 100000
+
+    erasureFails = 0
+    for i in xrange(numFiles):
+        count = 0
+        for j in xrange(n):
+            if random.random() <= reliability:
+                count += 1
+        if count < k:
+            erasureFails += 1
+
+    repFails = 0
+    for i in xrange(numFiles):
+        recovered = False
+        for j in xrange(rep):
+            if random.random() <= reliability:
+                recovered = True
+                break
+
+        if not recovered:
+            repFails += 1
+
+    f = open('results.txt', 'a')
+    f.write("Stored {0} files\n".format(numFiles))
+    f.write("{0}x replication\n".format(rep))
+    f.write("{0}/{1} erasure code\n".format(n, k))
+    f.write("Node reliability: {0}\n".format(reliability))
+    f.write("Erasure coding availability: {0}\n".format(float(numFiles - erasureFails)/numFiles))
+    f.write("Replication availability:    {0}\n".format(float(numFiles - repFails)/numFiles))
+    f.write("\n")
+    f.close()
+
+if __name__ == '__main__':
+    main()
