@@ -21,6 +21,7 @@ The contents are as follows:
   this file simulates both an erasure encoded storage system and a replication
   based storage system for a variety of redundancy and reliability levels.
   The results of these simulations are output to 'results.txt'
+* 'join.py' is a helper that spawns processes in the background for erasure_sim.py
 * 'results.txt' is output by erasure_sim.py. This output is discussed in our
   report.
 * 'build.sh' is a simple shell script for testing and cleaning up any files
