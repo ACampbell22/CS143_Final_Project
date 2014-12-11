@@ -14,24 +14,37 @@ import genericmatrix
 import math
 import ffield
 from storageNode import StorageNode
+import subprocess
+import time
+
+import zerorpc
 
 def main():
+    # print "Setting up network"
     # First we setup the network. We'll use 7 nodes, but more can be added as desired
-    port = 2000
-    initialNode = StorageNode("127.0.0.1" + str(port))
+    # local = "127.0.0.1:"
+    # port = 2000
+    # for i in xrange(0,7):
+    #     subprocess.Popen(["./join.py", local + str(port + i), local + str(port)])
+    #     print "."
+    #     time.sleep(1)
 
-    for i in xrange(1,7):
-        pass
-
+    # print "Storing files"
     ## Now we store a few files among nodes
+    # for f in ["/ls", "/bin/date", "/bin/echo"]:
+    #     client = zerorpc.Client()
+    #     client.connect("tcp://%s" % (local + str(port + i)))
+    #     client(storeFile, f)
+    #     client.close()
 
-
-
-
+    # print "Recovering files"
     ## Now we recover the files from the nodes
-
-
-
+    # for f in ["/ls", "/bin/date", "/bin/echo"]:
+    #     client = zerorpc.Client()
+    #     client.connect("tcp://%s" % (local + str(port + i)))
+    #     client(getFile, f)
+    #     client.close()
+    # print "Successfully recovered files\n"
 
     # Rather than running the simulation on our chord network, (which adds the complexity
     # of adding nodes to and taking nodes out of the network at random), we simulate the
